@@ -34,23 +34,23 @@ async function callOracle(endpoint, prompt) {
 // Generate text
 document.getElementById("generate-btn").addEventListener("click", async () => {
     if (!selectedOracle) {
-        alert("Please select an oracle first.");
+        alert("please select an oracle first.");
         return;
     }
 
     const prompt = document.getElementById("user-input").value.trim();
     if (!prompt) {
-        alert("Enter a prompt to ask the machine.");
+        alert("enter a prompt to ask the machine.");
         return;
     }
 
-    document.getElementById("output").textContent = "Consulting the oracle…";
+    document.getElementById("output").textContent = "consulting the oracle…";
 
     try {
         const prophecy = await callOracle(selectedOracle, prompt);
         document.getElementById("output").textContent = prophecy;
     } catch (err) {
         document.getElementById("output").textContent =
-            "❌ Oracle failed to respond: " + err.message;
+            "❌ oracle failed to respond: " + err.message;
     }
 });
