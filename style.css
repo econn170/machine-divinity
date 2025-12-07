@@ -71,7 +71,9 @@ h1 {
 }
 
 nav {
-  margin-bottom: 20px;
+  text-align: center;     /* centers all nav links */
+  width: 100%;            /* makes nav span full container */
+  margin-bottom: 25px;
 }
 
 nav a {
