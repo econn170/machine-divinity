@@ -28,7 +28,11 @@ This dataset can support future work in linguistic analysis, digital ethnography
 4. /models (HF links): [econnors/resignationlist-oracle](https://huggingface.co/econnors/resignationist-oracle), [econnors/conflictual-oracle](https://huggingface.co/econnors/conflictual-oracle/tree/main), and [econnors/resignationist-oracle](https://huggingface.co/econnors/resignationist-oracle)
 5. [machine-divinity-proxy (HF Space)](https://huggingface.co/spaces/econnors/machine-divinity-proxy): FastAPI inference backend
 6. [index.html](index.html)
-7. [style.css](style.css)
-8. [script.js](script.js)
-9. README.md
+7. [about.html](about.html)
+8. [eschatology.html](eschatology.html)
+9. [process.html](process.html)
+10. [ethics.html](ethics.html)
+11. [style.css](style.css)
+12. [script.js](script.js)
+13. [README.md](README.md)
 
