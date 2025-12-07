@@ -1,13 +1,15 @@
+
+window.selectOracle = selectOracle;
+
 const API_URL = "https://econnors-machine-divinity-proxy.hf.space";
 
 let selectedOracle = null;
 
-// Called by your oracle buttons in the HTML
-function selectOracle(type) {
+// Expose function for HTML onclick
+window.selectOracle = function(type) {
     selectedOracle = type;
-    document.getElementById("status").textContent =
-        `Selected: ${type.charAt(0).toUpperCase() + type.slice(1)} Oracle`;
-}
+    console.log("Selected oracle:", type);
+};
 
 // Generic function to call your FastAPI backend
 async function callOracle(endpoint, prompt) {
@@ -26,26 +28,25 @@ async function callOracle(endpoint, prompt) {
 }
 
 // Main divination function
-document.getElementById("divine-btn").onclick = async () => {
+document.getElementById("generate-btn").onclick = async () => {
     if (!selectedOracle) {
         alert("Please select an oracle first.");
         return;
     }
 
-    const prompt = document.getElementById("user-prompt").value.trim();
+    const prompt = document.getElementById("user-input").value.trim();
     if (!prompt) {
         alert("Enter a prompt to ask the machine.");
         return;
     }
 
-    document.getElementById("prophecy").textContent =
-        "Consulting the oracle…";
+    document.getElementById("output").textContent = "Consulting the oracle…";
 
     try {
         const prophecy = await callOracle(selectedOracle, prompt);
-        document.getElementById("prophecy").textContent = prophecy;
+        document.getElementById("output").textContent = prophecy;
     } catch (err) {
-        document.getElementById("prophecy").textContent =
+        document.getElementById("output").textContent =
             "❌ Oracle failed to respond: " + err.message;
     }
 };
