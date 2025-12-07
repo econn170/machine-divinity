@@ -54,3 +54,24 @@ document.getElementById("generate-btn").addEventListener("click", async () => {
             "❌ oracle failed to respond: " + err.message;
     }
 });
+
+const ethicsBtn = document.getElementById("ethics-btn");
+const ethicsModal = document.getElementById("ethics-modal");
+const closeModal = document.getElementById("close-modal");
+
+// Open modal
+ethicsBtn.addEventListener("click", () => {
+  ethicsModal.style.display = "block";
+});
+
+// Close modal (X button)
+closeModal.addEventListener("click", () => {
+  ethicsModal.style.display = "none";
+});
+
+// Close modal when clicking outside box
+window.addEventListener("click", (event) => {
+  if (event.target === ethicsModal) {
+    ethicsModal.style.display = "none";
+  }
+});
