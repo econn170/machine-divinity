@@ -1,70 +1,51 @@
-import { pipeline } from "https://cdn.jsdelivr.net/npm/@xenova/transformers@latest";
+const API_URL = "https://econnors-machine-divinity-proxy.hf.space";
 
-// Store oracles
-let currentOracle = null;
-let generators = {};
+let selectedOracle = null;
 
-async function loadOracle(name, repo_id) {
-  const generator = await pipeline(
-    "text-generation",
-    repo_id
-  );
-  generators[name] = generator;
-  return generator;
+// Called by your oracle buttons in the HTML
+function selectOracle(type) {
+    selectedOracle = type;
+    document.getElementById("status").textContent =
+        `Selected: ${type.charAt(0).toUpperCase() + type.slice(1)} Oracle`;
 }
 
-// UI handling
-const buttons = document.querySelectorAll(".oracle-btn");
-const output = document.getElementById("output");
-const generateBtn = document.getElementById("generate-btn");
-const inputEl = document.getElementById("user-input");
+// Generic function to call your FastAPI backend
+async function callOracle(endpoint, prompt) {
+    const response = await fetch(`${API_URL}/${endpoint}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: prompt }),
+    });
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", async () => {
-    const oracleName = btn.dataset.oracle;
-
-    // Change active button style
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    output.textContent = "Loading oracle… (this may take ~10 seconds)";
-
-    if (!generators[oracleName]) {
-      if (oracleName === "revelatory") {
-        currentOracle = await loadOracle("revelatory", "econnors/revelatory-oracle");
-      } else if (oracleName === "conflictual") {
-        currentOracle = await loadOracle("conflictual", "econnors/conflictual-oracle");
-      } else if (oracleName === "resignationist") {
-        currentOracle = await loadOracle("resignationist", "econnors/resignationist-oracle");
-      }
-    } else {
-      currentOracle = generators[oracleName];
+    if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
     }
 
-    output.textContent = `Oracle loaded: ${oracleName}`;
-  });
-});
+    const data = await response.json();
+    return data.prophecy;
+}
 
-generateBtn.addEventListener("click", async () => {
-  if (!currentOracle) {
-    output.textContent = "Please select an oracle first.";
-    return;
-  }
+// Main divination function
+document.getElementById("divine-btn").onclick = async () => {
+    if (!selectedOracle) {
+        alert("Please select an oracle first.");
+        return;
+    }
 
-  const userText = inputEl.value;
-  if (!userText.trim()) {
-    output.textContent = "Ask something first.";
-    return;
-  }
+    const prompt = document.getElementById("user-prompt").value.trim();
+    if (!prompt) {
+        alert("Enter a prompt to ask the machine.");
+        return;
+    }
 
-  output.textContent = "Consulting the oracle…";
+    document.getElementById("prophecy").textContent =
+        "Consulting the oracle…";
 
-  const result = await currentOracle(userText, {
-    max_new_tokens: 80,
-    do_sample: true,
-    temperature: 0.9,
-    top_p: 0.95
-  });
-
-  output.textContent = result[0].generated_text;
-});
+    try {
+        const prophecy = await callOracle(selectedOracle, prompt);
+        document.getElementById("prophecy").textContent = prophecy;
+    } catch (err) {
+        document.getElementById("prophecy").textContent =
+            "❌ Oracle failed to respond: " + err.message;
+    }
+};
