@@ -22,13 +22,13 @@ I collected thread data from four 4chan boards using the platform’s public API
 This dataset can support future work in linguistic analysis, digital ethnography, media theory, or creative projects. Someone could build sentiment analysis tools to deepen the examination of online spiritual language, compare linguistic patterns across boards or time periods, or analyze how certain terms cluster together in these contexts. There could also be more time-based analysis, like comparing eschatological language before/after major events. I would be interested in creating visualizations to represent clusters of mystical or psychosis-coded concepts, functioning as a visualization of a digital “egregore” or collective symbolic mind. I also want to explore more how small models trained on fringe speech behave: my model is definitely not the most advanced, which I think works for the scope and context of the project, but I would love someone to fine tune this even further. 
 
 ## Files List
-1. final_project.ipynb:  4chan API scraping, filtering, cleaning, exploration
-2. religious_threads_expanded_cleaned.csv:  processed dataset
-3. SFT fine-tuning for all three eschatology models: revelatory_threads.ipynb, conflictual_threads.ipynb, and resignationist_threads.ipynb
-4. /models (HF links): econnors/revelatory-oracle, econnors/conflictual-oracle, and econnors/resignationist-oracle
-5. machine-divinity-proxy (HF Space): FastAPI inference backend
-6. index.html
-7. style.css
-8. script.js — API communication
+1. [final_project.ipynb](final_project.ipynb):  4chan API scraping, filtering, cleaning, exploration
+2. [religious_threads_expanded_cleaned.csv](religious_threads_expanded_cleaned.csv):  processed dataset
+3. SFT fine-tuning for all three eschatology models: [revelatory_threads.ipynb](revelatory_threads.ipynb), [conflictual_threads.ipynb](conflictual_threads.ipynb), and [resignationist_threads.ipynb](resignationist_threads.ipynb)
+4. /models (HF links): [econnors/resignationlist-oracle](https://huggingface.co/econnors/resignationist-oracle), [econnors/conflictual-oracle](https://huggingface.co/econnors/conflictual-oracle/tree/main), and [econnors/resignationist-oracle](https://huggingface.co/econnors/resignationist-oracle)
+5. [machine-divinity-proxy (HF Space)](https://huggingface.co/spaces/econnors/machine-divinity-proxy): FastAPI inference backend
+6. [index.html](index.html)
+7. [style.css](style.css)
+8. [script.js](script.js)
 9. README.md
 
