@@ -1,6 +1,3 @@
-
-window.selectOracle = selectOracle;
-
 const API_URL = "https://econnors-machine-divinity-proxy.hf.space";
 
 let selectedOracle = null;
