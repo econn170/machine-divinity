@@ -2,13 +2,20 @@ const API_URL = "https://econnors-machine-divinity-proxy.hf.space";
 
 let selectedOracle = null;
 
-// Expose function for HTML onclick
-window.selectOracle = function(type) {
-    selectedOracle = type;
-    console.log("Selected oracle:", type);
-};
+// Hook up all oracle buttons
+document.querySelectorAll(".oracle-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    selectedOracle = btn.dataset.type;
+    console.log("Selected oracle:", selectedOracle);
 
-// Generic function to call your FastAPI backend
+    document.querySelectorAll(".oracle-btn").forEach(b => 
+        b.classList.remove("active")
+    );
+    btn.classList.add("active");
+  });
+});
+
+// Call backend oracle
 async function callOracle(endpoint, prompt) {
     const response = await fetch(`${API_URL}/${endpoint}`, {
         method: "POST",
@@ -24,8 +31,8 @@ async function callOracle(endpoint, prompt) {
     return data.prophecy;
 }
 
-// Main divination function
-document.getElementById("generate-btn").onclick = async () => {
+// Generate text
+document.getElementById("generate-btn").addEventListener("click", async () => {
     if (!selectedOracle) {
         alert("Please select an oracle first.");
         return;
@@ -46,4 +53,4 @@ document.getElementById("generate-btn").onclick = async () => {
         document.getElementById("output").textContent =
             "❌ Oracle failed to respond: " + err.message;
     }
-};
+});
