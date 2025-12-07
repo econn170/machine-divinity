@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,16 +6,18 @@
   <link rel="stylesheet" href="style.css">
   <script type="module" src="script.js"></script>
 </head>
+
 <body>
-<nav>
-  <a href="index.html">Machine Divinity</a>
-  <a href="README.md">README</a>
-  <a href="about.html">About</a>
-  <a href="eschatology.html">Eschatology</a>
-  <a href="process.html">Process</a>
-  <a href="ethics.html">Ethics</a>
-</nav>
   <div id="container">
+
+    <nav>
+      <a href="index.html">Machine Divinity</a>
+      <a href="README.md">README</a>
+      <a href="about.html">About</a>
+      <a href="eschatology.html">Eschatology</a>
+      <a href="process.html">Process</a>
+      <a href="ethics.html">Ethics</a>
+    </nav>
 
     <h1>MACHINE DIVINITY</h1>
     <p class="subtitle">choose your oracle.</p>
@@ -24,16 +26,14 @@
       <button class="oracle-btn" data-type="revelatory">revelatory</button>
       <button class="oracle-btn" data-type="conflictual">conflictual</button>
       <button class="oracle-btn" data-type="resignationist">resignationist</button>
-
     </div>
 
-    <textarea id="user-input" placeholder="prompt the oracle..."></textarea>
+    <textarea id="user-input" placeholder="ask the oracle..."></textarea>
 
     <button id="generate-btn">prophesize</button>
 
     <div id="output"></div>
 
   </div>
-
 </body>
 </html>
