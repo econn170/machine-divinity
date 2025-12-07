@@ -23,16 +23,19 @@ This dataset can support future work in linguistic analysis, digital ethnography
 
 ## Files List
 1. [final_project.ipynb](final_project.ipynb):  4chan API scraping, filtering, cleaning, exploration
-2. [religious_threads_expanded_cleaned.csv](religious_threads_expanded_cleaned.csv):  processed dataset
-3. SFT fine-tuning for all three eschatology models: [revelatory_threads.ipynb](revelatory_threads.ipynb), [conflictual_threads.ipynb](conflictual_threads.ipynb), and [resignationist_threads.ipynb](resignationist_threads.ipynb)
-4. /models (HF links): [econnors/resignationlist-oracle](https://huggingface.co/econnors/resignationist-oracle), [econnors/conflictual-oracle](https://huggingface.co/econnors/conflictual-oracle/tree/main), and [econnors/resignationist-oracle](https://huggingface.co/econnors/resignationist-oracle)
-5. [machine-divinity-proxy (HF Space)](https://huggingface.co/spaces/econnors/machine-divinity-proxy): FastAPI inference backend
-6. [index.html](index.html)
-7. [about.html](about.html)
-8. [eschatology.html](eschatology.html)
-9. [process.html](process.html)
-10. [ethics.html](ethics.html)
-11. [style.css](style.css)
-12. [script.js](script.js)
-13. [README.md](README.md)
+2. [religious_threads_expanded_cleaned.csv](religious_threads_expanded_cleaned.csv):  processed full dataset
+3. [resignationist_threads.csv](resignationist_threads.csv): filtered resignationist dataset
+4. [revelatory_threads.csv](revalatory_threads.csv): filtered revelatory dataset
+5. [conflictual_threads.csv](conflictual_threads.csv): filtered conflictual dataset
+6. [revelatory_threads.ipynb](revelatory_threads.ipynb), [conflictual_threads.ipynb](conflictual_threads.ipynb), and [resignationist_threads.ipynb](resignationist_threads.ipynb): the notebooks used to train the three language models
+7. [econnors/resignationlist-oracle](https://huggingface.co/econnors/resignationist-oracle), [econnors/conflictual-oracle](https://huggingface.co/econnors/conflictual-oracle/tree/main), and [econnors/resignationist-oracle](https://huggingface.co/econnors/resignationist-oracle): the huggyface links for the three final models
+8. [machine-divinity-proxy (HF Space)](https://huggingface.co/spaces/econnors/machine-divinity-proxy): API  backend
+9. [index.html](index.html): homepage
+10. [about.html](about.html): about page
+11. [eschatology.html](eschatology.html): explains eschatology
+12. [process.html](process.html): explains process
+13. [ethics.html](ethics.html): gives ethics and content statement
+14. [style.css](style.css): styles
+15. [script.js](script.js): javascript
+16. [README.md](README.md): this document
 
