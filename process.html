@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Process — Machine Divinity</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Oracles</a>
+    <a href="about.html">About</a>
+    <a href="eschatology.html">Eschatology</a>
+    <a href="process.html">Process</a>
+    <a href="ethics.html">Ethics</a>
+  </nav>
+
+  <div id="container">
+    <h1>Process & Workflow</h1>
+    <p>
+      I scraped four 4chan boards using the public API, filtered posts through a
+      lexicon of mystical and metaphysical terms, and cleaned the resulting text.
+      Posts were categorized into conflictual, revelatory, and resignationist
+      eschatologies using keyword-based heuristics. I generated embeddings and UMAP
+      projections to visualize thematic clusters, then fine-tuned three GPT-Neo
+      125M models—one for each eschatology. These models were deployed via a
+      FastAPI backend on HuggingFace Spaces and are accessed through this site’s
+      interface.
+    </p>
+  </div>
+</body>
+</html>
