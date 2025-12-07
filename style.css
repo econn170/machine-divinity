@@ -1,0 +1,71 @@
+body {
+  background: #0b0b0b;
+  color: #e3e3e3;
+  font-family: "IBM Plex Mono", monospace;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+#container {
+  width: 700px;
+  text-align: center;
+}
+
+h1 {
+  letter-spacing: 4px;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #999;
+  margin-bottom: 30px;
+}
+
+#oracle-selector button {
+  margin: 5px;
+  padding: 12px 20px;
+  background: #222;
+  border: 1px solid #555;
+  color: white;
+  cursor: pointer;
+}
+
+#oracle-selector button.active {
+  border-color: #c23df3;
+  background: #3a004d;
+}
+
+#user-input {
+  width: 100%;
+  height: 120px;
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#generate-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 16px;
+  background: #5a0bb5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#generate-btn:hover {
+  background: #7b1fe1;
+}
+
+#output {
+  margin-top: 30px;
+  padding: 20px;
+  background: #111;
+  border: 1px solid #333;
+  min-height: 150px;
+  white-space: pre-wrap;
+}
