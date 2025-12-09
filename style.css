@@ -138,3 +138,21 @@ nav a:hover {
   color: #fff;
 }
 
+a:link {
+  color: #c23df3;
+}
+
+
+a:visited {
+  color: #c23df3;
+}
+
+
+a:hover {
+  color: #c23df3;
+}
+
+
+a:active {
+  color: #c23df3;
+}
