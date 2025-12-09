@@ -103,7 +103,6 @@ nav a:hover {
   background: #7b1fe1;
 }
 
-/* Modal backdrop */
 .modal {
   display: none; 
   position: fixed;
@@ -116,7 +115,6 @@ nav a:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Modal box */
 .modal-content {
   background-color: #0f0f0f;
   margin: 10% auto;
@@ -129,7 +127,6 @@ nav a:hover {
   box-shadow: 0 0 20px rgba(122, 41, 255, 0.4);
 }
 
-/* Close button */
 #close-modal {
   float: right;
   font-size: 26px;
@@ -139,4 +136,21 @@ nav a:hover {
 
 #close-modal:hover {
   color: #fff;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: white;
 }
