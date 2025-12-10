@@ -15,7 +15,6 @@ document.querySelectorAll(".oracle-btn").forEach(btn => {
   });
 });
 
-// Call backend oracle
 async function callOracle(endpoint, prompt) {
     const response = await fetch(`${API_URL}/${endpoint}`, {
         method: "POST",
@@ -31,7 +30,6 @@ async function callOracle(endpoint, prompt) {
     return data.prophecy;
 }
 
-// Generate text
 document.getElementById("generate-btn").addEventListener("click", async () => {
     if (!selectedOracle) {
         alert("please select an oracle first.");
@@ -59,17 +57,17 @@ const ethicsBtn = document.getElementById("ethics-btn");
 const ethicsModal = document.getElementById("ethics-modal");
 const closeModal = document.getElementById("close-modal");
 
-// Open modal
+
 ethicsBtn.addEventListener("click", () => {
   ethicsModal.style.display = "block";
 });
 
-// Close modal (X button)
+
 closeModal.addEventListener("click", () => {
   ethicsModal.style.display = "none";
 });
 
-// Close modal when clicking outside box
+
 window.addEventListener("click", (event) => {
   if (event.target === ethicsModal) {
     ethicsModal.style.display = "none";
