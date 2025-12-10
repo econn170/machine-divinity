@@ -23,7 +23,7 @@ This dataset can support future work in linguistic analysis, digital ethnography
 
 ## Files List
 1. [final_project.ipynb](final_project.ipynb):  4chan API scraping, filtering, cleaning, exploration
-2. [religious_threads_expanded (1).csv](religious_threads_expanded (1).csv):  processed full dataset
+2. [religious_threads_expanded (1).csv](religious_threads_expanded(1).csv)processed full dataset
 3. [resignationist_threads.csv](resignationist_threads.csv): filtered resignationist dataset
 4. [revelatory_threads.csv](revalatory_threads.csv): filtered revelatory dataset
 5. [conflictual_threads.csv](conflictual_threads.csv): filtered conflictual dataset
